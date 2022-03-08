@@ -1,0 +1,21 @@
+1) # Exclude sites without called genotype and missing genotypes. Choose a threshold for the Depth
+bcftools view -r 1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9 -U -g ^miss -V indels --no-update -i 'FORMAT/DP>=XX & FORMAT/DP<=XX & FORMAT/GQ>=30' -Oz -o VCFSNPS_IND_DPgeXX_AND_DPleXX_AND_GQge30.vcf.gz IND_from_ATLAS.vcf.gz
+
+2) # Change genotypes if Allelic Imbalance <= 0.1 and replace by Major Allele based on AD field of the vcf
+bcftools changeGT.so -Oz -o VCFIMBA_IND_DPgeXX_AND_DPleXX_AND_GQge30.vcf.gz -- VCFSNPS_IND_DPgeXX_AND_DPleXX_AND_GQge30.vcf.gz -t q -n M -i 'AI <= 0.1' 
+bcftools index VCFIMBA_IND_DPgeXX_AND_DPleXX_AND_GQge30.vcf.gz
+
+3) # mergeFiles.txt contains all individuals to be merged
+bcftools merge -r 1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9 -l mergeFiles.txt --merge snps -Oz -o Ancient10X.merge.vcf.gz
+
+4) # Remove all INFO fields and all FORMAT fields except for GT
+bcftools annotate -x INFO,^FORMAT/GT Ancient10X.merge.vcf.gz -Oz -o Ancient10X.merge_clean.vcf.gz
+
+5) # Polarisation with chimp: changes REF/ALT and GT but not AD
+bcftools norm -c s -f panTro4.hg19.fa.gz Ancient10X.merge_clean.vcf.gz -Oz -o Ancient10X.merge_panTro4.vcf.gz
+
+6) # Remove alleles not seen in the genotype fields from the ALT column and those whithout REF
+bcftools view -e REF=\"N\" -a Ancient10X.merge_panTro4.vcf.gz -Oz -o Ancient10X.merge_panTro4_clean.vcf.gz
+
+7) # AC=(2 * number of individuals)
+bcftools view -m2 -M2 -e AC=YY -Oz -o Ancient10X.merge_panTro4_final.vcf.gz Ancient10X.merge_panTro4_clean.vcf.gz
