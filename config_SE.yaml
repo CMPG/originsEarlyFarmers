@@ -1,0 +1,51 @@
+#####################################################################################
+#####################################################################################
+# Author      : Ilektra Schulz
+#               ilektra.schulz@unifr.ch
+#
+# Script      : Config file for the ATLAS-pipeline for commit 6df90e7 as used in 
+#               "The genomic origins of the world’s first farmers"
+#               For later commits please refer to our wiki page.
+#               https://bitbucket.org/wegmannlab/atlas-pipeline/wiki/Home
+#
+# Usage       : Rename this file "config.yaml" and execute run_ATLAS-pipeline.sh 
+#               within atlas-pipeline folder 
+#         
+#
+# Date        : 2018-12-15
+#####################################################################################
+#####################################################################################
+
+#1. sample_file
+sample_file: supporting_files/samples_SE.tsv
+
+#2. programs, references, etc.
+atlas: /programs/atlas/atlas
+ref: supporting_files/hs37d5.fa
+UCNE: supporting_files/hg19_UCNE_coord.bed
+
+#3. how was your bamfile sequenced? options: single,paired, mixed
+sequence: single
+#sequence: paired
+#sequence: mixed
+
+#4. conditions on recalibration 
+recal: NO-file  #if there is no file to provide and recal should be analyzed separately for every RG
+#recal: RG-file  #if there is a readgroup-file to provide, called MySample.poolRG_recal.txt
+#recal: RC-file  #if there is a recal-file to provide (define 'recalRC' !!)
+
+#if the condition "RC-file" is enabled (see below), please provide the path to your file.
+#recalRC: /data/projects/p243_ancientdna_unifr/Temporary/Ilektra/Pipeline_Snakemake/adnapipeline/all_samples_recalibrationEM.txt
+
+
+#5. ### conditions on PMD-estimation -- uncomment only ONE option for your analysis
+PMD: separate  #if there is no file to provide and PMD should be analyzed separately for every RG
+#PMD: poolRG    #if there is a readgroup-file to provide, called MySample.poolRG_pmd.txt
+
+
+#6. how many bases should be additionally split from your maximum readlength (due to uneven adapter trimming) ?
+cutoff: 5
+
+#7. should the single-end readgroups be splitted
+split: T
+#split: F
