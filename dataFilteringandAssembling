@@ -1,3 +1,5 @@
+Pipeline steps to filter vcf files generated from the ATLAS variant calling pipeline
+
 1) # Exclude sites without called genotype and missing genotypes. Choose a threshold for the Depth
 bcftools view -r 1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,3,4,5,6,7,8,9 -U -g ^miss -V indels --no-update -i 'FORMAT/DP>=XX & FORMAT/DP<=XX & FORMAT/GQ>=30' -Oz -o VCFSNPS_IND_DPgeXX_AND_DPleXX_AND_GQge30.vcf.gz IND_from_ATLAS.vcf.gz
 
