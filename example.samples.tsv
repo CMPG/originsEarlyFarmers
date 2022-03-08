@@ -1,0 +1,12 @@
+Sample	Path
+#input-file for ATLAS-pipeline. "Sample" = prefix of bamfile without '.bam'-suffix ; "Path" = location of bamfile
+#There is a newer version online - check out our bitbucket at https://bitbucket.org/wegmannlab/atlas-pipeline/wiki/Home
+samplePrefix1 /path/to/bamfile/
+samplePrefix2 /path/to/bamfile/
+samplePrefix3 /path/to/bamfile/
+samplePrefix4 /path/to/bamfile/
+samplePrefix5 /path/to/bamfile/
+samplePrefix6 /path/to/bamfile/
+samplePrefix7 /path/to/bamfile/
+samplePrefix8 /path/to/bamfile/
+samplePrefix9 /path/to/bamfile/
