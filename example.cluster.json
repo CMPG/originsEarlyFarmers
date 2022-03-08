@@ -1,0 +1,98 @@
+{
+    "__default__" :
+    {
+        "time" : "20:15:00",
+        "mem" : "5000",
+        "out": "analysis/logs/{rule}.{wildcards}.out",
+        "err": "analysis/logs/{rule}.{wildcards}.err",
+        "name": "default"
+    },
+
+    "summary" :
+    {
+        "mem" : "5",
+        "time": "00:00:20",
+        "name": "summary"
+    },
+
+    "recal" :
+    {
+        "mem" : "80000",
+        "name": "recal"
+    },
+
+    "PMDestimation_split" :
+    {
+        "name": "PMD"
+    },
+
+    "EstimateTheta":
+    {
+        "time" : "20:00:00",
+        "mem"  : "100G",
+        "name" : "Theta"
+    },
+
+    "EstimateGlobalTheta":
+    {
+        "time" : "20:00:00",
+        "mem"  : "150G",
+        "name" : "GlobTheta"
+    },
+
+    "callMLE" :
+    {
+        "mem" : "20000",
+        "time" : "50:00:00",
+        "name" : "callMLE"
+    },
+    "depthDist" :
+    {
+        "mem" : "20000",
+        "time" : "50:00:00",
+        "name" : "depthPerSite"
+    },
+
+    "callBayes":
+    {
+        "time" : "50:00:00",
+        "mem"  : "30G",
+        "name" : "Bayes"
+    },
+
+    "AllelePresence":
+    {
+        "time" : "4:00:00",
+        "mem"  : "30G",
+        "name" : "AP"
+    },
+
+    "callNEW":
+    {
+        "time" : "100:00:00",
+        "mem"  : "100G",
+        "name" : "NEWBayes"
+    },
+
+    "ValidateSam":
+    {
+        "time" : "50:00:00",
+        "mem"  : "30G",
+        "name" : "ValidateSam"
+    },
+
+    "recalBAM":
+    {
+        "time" : "50:00:00",
+        "mem"  : "10G",
+        "name" : "recalBAM"
+    },
+
+        "MergeReads":
+    {
+        "time" : "100:00:00",
+        "mem"  : "100G",
+        "name" : "MergeReads"
+
+    }
+}
