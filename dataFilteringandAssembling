@@ -1,3 +1,7 @@
+# Author: Adamandia Kapopoulou
+# adamantia.kapopoulou@iee.unibe.ch
+# Date: 08/03/2022
+
 ## Pipeline steps to filter vcf files generated from the ATLAS variant calling pipeline
 
 1) # Exclude sites without called genotype and missing genotypes. Choose a threshold for the Depth
