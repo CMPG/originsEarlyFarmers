@@ -10,8 +10,6 @@ scripts_inference
 
 The scripts folders have READMEs with additional details for the scripts.
 
-software
-    Folder containing ANNOVAR, which has the input (Ancient10X_08-2021_mergeAll102Labelled.avinput) and output (Ancient10X_08-2021_mergeAll102Labelled.exonic_variant_function) files for exonic variation, and the developmental build of dadi used for inference.
-
+Folder containing the developmental build of dadi used for inference.
 dadi can be installed via the command from the dadi_devel folder:
 python setup.py install
