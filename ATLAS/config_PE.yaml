@@ -36,7 +36,7 @@ recal: NO-file  #if there is no file to provide and recal should be analyzed sep
 #recal: RC-file  #if there is a recal-file to provide (define 'recalRC' !!)
 
 #if the condition "RC-file" is enabled (see below), please provide the path to your file.
-#recalRC: /data/projects/p243_ancientdna_unifr/Temporary/Ilektra/Pipeline_Snakemake/adnapipeline/all_samples_recalibrationEM.txt
+#recalRC: supporting_files/all_samples_recalibrationEM.txt
 
 
 #5. ### conditions on PMD-estimation -- uncomment only ONE option for your analysis
