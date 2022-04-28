@@ -1,7 +1,7 @@
 # originsEarlyFarmers
 
 ## *Description*
-Code and input files from "The genomic origins of the world’s first farmers" publication (Marchi et al. 2022).
+Code and input files from "The genomic origins of the world’s first farmers" publication (Marchi et al., Cell, 2022).
 
 
 ## *Content*
@@ -14,4 +14,4 @@ Code and input files from "The genomic origins of the world’s first farmers" p
 
 
 ## *References*
-Marchi et al. 2022, The genomic origins of the world’s first farmers.
+Cite this article in press as: Marchi et al., The genomic origins of the world’s first farmers, Cell (2022), https://doi.org/10.1016/j.cell.2022.04.008.
